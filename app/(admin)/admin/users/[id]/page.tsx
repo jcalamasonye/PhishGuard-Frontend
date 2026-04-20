@@ -68,7 +68,7 @@ export default function UserProfilePage() {
     high: { variant: 'error' as const, label: 'High Risk' },
   }[metrics.riskLevel];
 
-  // Build chart data from campaign history
+  
   const clickRateData = campaigns.map((c, i) => ({
     name: `C${i + 1}`,
     clickRate: c.linkClicked ? 100 : 0,

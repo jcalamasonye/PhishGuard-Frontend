@@ -40,7 +40,7 @@ export default function EmailConfigurationPage() {
     }
     setSendingTest(true);
     try {
-      // Email sending endpoint would go here
+      
       console.log('Send test email to:', testEmail);
       showToast('Test email sent successfully', 'success');
     } catch (err) {
@@ -54,7 +54,7 @@ export default function EmailConfigurationPage() {
   const handleSaveConfiguration = async () => {
     setSaving(true);
     try {
-      // Email config save endpoint would go here
+      
       console.log('Save email configuration');
       showToast('Email configuration saved', 'success');
     } catch (err) {

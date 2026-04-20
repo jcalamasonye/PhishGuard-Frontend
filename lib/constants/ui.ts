@@ -1,12 +1,6 @@
-/**
- * UI Constants
- * Spacing, sizing, radius, shadows, and other UI tokens
- * Usage: import { UI } from '@/lib/constants';
- */
 
-/**
- * Spacing constants (Tailwind classes)
- */
+
+
 export const SPACING = {
   xs: 'p-2',
   sm: 'p-4',
@@ -14,7 +8,7 @@ export const SPACING = {
   lg: 'p-8',
   xl: 'p-12',
   
-  // Padding
+  
   padding: {
     xs: 'p-2',
     sm: 'p-4',
@@ -23,7 +17,7 @@ export const SPACING = {
     xl: 'p-12',
   },
   
-  // Margin
+  
   margin: {
     xs: 'm-2',
     sm: 'm-4',
@@ -32,7 +26,7 @@ export const SPACING = {
     xl: 'm-12',
   },
   
-  // Gap
+  
   gap: {
     xs: 'gap-2',
     sm: 'gap-4',
@@ -42,9 +36,7 @@ export const SPACING = {
   },
 } as const;
 
-/**
- * Border radius constants
- */
+
 export const RADIUS = {
   none: 'rounded-none',
   sm: 'rounded-sm',
@@ -53,7 +45,7 @@ export const RADIUS = {
   xl: 'rounded-xl',
   full: 'rounded-full',
   
-  // Specific corners
+  
   top: {
     sm: 'rounded-t-sm',
     md: 'rounded-t-md',
@@ -68,9 +60,7 @@ export const RADIUS = {
   },
 } as const;
 
-/**
- * Shadow constants
- */
+
 export const SHADOW = {
   none: 'shadow-none',
   sm: 'shadow-sm',
@@ -80,9 +70,7 @@ export const SHADOW = {
   '2xl': 'shadow-2xl',
 } as const;
 
-/**
- * Font size constants
- */
+
 export const FONT_SIZE = {
   xs: 'text-xs',
   sm: 'text-sm',
@@ -94,9 +82,7 @@ export const FONT_SIZE = {
   '4xl': 'text-4xl',
 } as const;
 
-/**
- * Font weight constants
- */
+
 export const FONT_WEIGHT = {
   normal: 'font-normal',
   medium: 'font-medium',
@@ -104,9 +90,7 @@ export const FONT_WEIGHT = {
   bold: 'font-bold',
 } as const;
 
-/**
- * Icon sizes
- */
+
 export const ICON_SIZE = {
   xs: 'w-3 h-3',
   sm: 'w-4 h-4',
@@ -117,9 +101,7 @@ export const ICON_SIZE = {
   '3xl': 'w-12 h-12',
 } as const;
 
-/**
- * Container max widths
- */
+
 export const CONTAINER = {
   sm: 'max-w-sm',
   md: 'max-w-md',
@@ -134,9 +116,7 @@ export const CONTAINER = {
   full: 'max-w-full',
 } as const;
 
-/**
- * Z-index layers
- */
+
 export const Z_INDEX = {
   dropdown: 'z-10',
   sticky: 'z-20',
@@ -147,18 +127,14 @@ export const Z_INDEX = {
   tooltip: 'z-70',
 } as const;
 
-/**
- * Transition durations
- */
+
 export const TRANSITION = {
   fast: 'duration-150',
   normal: 'duration-300',
   slow: 'duration-500',
 } as const;
 
-/**
- * Component specific sizes
- */
+
 export const COMPONENT_SIZE = {
   button: {
     sm: 'px-3 py-1.5 text-sm',
@@ -177,9 +153,7 @@ export const COMPONENT_SIZE = {
   },
 } as const;
 
-/**
- * Layout constants
- */
+
 export const LAYOUT = {
   header: {
     height: 'h-[73px]',
@@ -195,9 +169,7 @@ export const LAYOUT = {
   },
 } as const;
 
-/**
- * All UI constants combined
- */
+
 export const UI = {
   spacing: SPACING,
   radius: RADIUS,

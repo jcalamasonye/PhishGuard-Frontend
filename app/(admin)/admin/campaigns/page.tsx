@@ -54,7 +54,7 @@ export default function CampaignsPage() {
     fetchCampaigns();
   }, [fetchCampaigns]);
 
-  // Reset to page 1 when filters change
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [filters.status, filters.searchQuery]);

@@ -69,9 +69,9 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column - Campaign Summary */}
+        {}
         <div className="lg:col-span-2 space-y-6">
-          {/* Campaign Summary Card */}
+          {}
           <Card>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Campaign Summary</h3>
             
@@ -101,7 +101,7 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
             </div>
           </Card>
 
-          {/* Sending Schedule Card */}
+          {}
           <Card>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Sending Schedule</h3>
             
@@ -112,7 +112,7 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
               onChange={(value) => setScheduleType(value as 'immediate' | 'scheduled' | 'randomized')}
             />
 
-            {/* Schedule for Later Options */}
+            {}
             {scheduleType === 'scheduled' && (
               <div className="mt-6 grid grid-cols-2 gap-4 pl-7">
                 <div>
@@ -140,7 +140,7 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
               </div>
             )}
 
-            {/* Randomize Options */}
+            {}
             {scheduleType === 'randomized' && (
               <div className="mt-6 pl-7">
                 <Slider
@@ -159,9 +159,9 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
           </Card>
         </div>
 
-        {/* Right Column - Checklists */}
+        {}
         <div className="space-y-6">
-          {/* Before You Launch */}
+          {}
           <Card className="bg-yellow-50 border-yellow-200">
             <div className="flex items-start gap-3 mb-4">
               <AlertTriangle className="w-5 h-5 text-yellow-600 shrink-0 mt-0.5" />
@@ -185,7 +185,7 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
             </ul>
           </Card>
 
-          {/* What Happens Next */}
+          {}
           <Card className="bg-blue-50 border-blue-200">
             <div className="flex items-start gap-3 mb-4">
               <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
@@ -202,7 +202,7 @@ export const ScheduleLaunchStep: React.FC<ScheduleLaunchStepProps> = ({
             </ul>
           </Card>
 
-          {/* Ready to Launch */}
+          {}
           <Card className="bg-green-50 border-green-200">
             <div className="flex items-start gap-3 mb-4">
               <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />

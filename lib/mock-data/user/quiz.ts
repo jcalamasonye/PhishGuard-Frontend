@@ -1,13 +1,8 @@
-/**
- * User Quiz Mock Data
- * All mock data for quiz pages
- */
+
 
 import { QuizQuestion } from '@/types/quiz';
 
-/**
- * Sample Quiz Questions
- */
+
 export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: '1',
@@ -59,9 +54,7 @@ export const MOCK_QUIZ_QUESTIONS: QuizQuestion[] = [
   }
 ];
 
-/**
- * Mock Quiz Results
- */
+
 export const MOCK_QUIZ_RESULTS = {
   totalQuestions: 4,
   correctAnswers: 3,
@@ -100,11 +93,9 @@ export const MOCK_QUIZ_RESULTS = {
   ]
 };
 
-/**
- * Helper: Get quiz by ID
- */
+
 export const getQuizById = (id: string) => {
-  // In real app, this would fetch from API
+  
   return {
     id,
     name: 'Password Reset Security Quiz',
@@ -113,11 +104,9 @@ export const getQuizById = (id: string) => {
   };
 };
 
-/**
- * Helper: Get quiz results by ID
- */
+
 export const getQuizResultsById = (id: string) => {
-  // In real app, this would fetch from API
+  
   return {
     id,
     ...MOCK_QUIZ_RESULTS,

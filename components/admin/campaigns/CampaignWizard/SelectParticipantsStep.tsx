@@ -67,7 +67,7 @@ export const SelectParticipantsStep: React.FC<SelectParticipantsStepProps> = ({
     if (selectedUserIds.length === users.length && users.length > 0) {
       onSelectionChange([]);
     } else {
-      // Merge current page selections with existing selections
+      
       const currentPageIds = users.map(u => u.id);
       const existingOtherPageIds = selectedUserIds.filter(id => !currentPageIds.includes(id));
       onSelectionChange([...existingOtherPageIds, ...currentPageIds]);

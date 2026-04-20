@@ -1,13 +1,8 @@
-/**
- * User Email Templates Mock Data
- * All mock data for email template previews
- */
+
 
 import { UserEmailTemplate } from '@/types/template';
 
-/**
- * System Email Templates
- */
+
 export const MOCK_SYSTEM_TEMPLATES: UserEmailTemplate[] = [
   {
     id: 'welcome-email',
@@ -103,9 +98,7 @@ The PhishGuard Team`,
   }
 ];
 
-/**
- * Phishing Email Templates
- */
+
 export const MOCK_PHISHING_TEMPLATES: UserEmailTemplate[] = [
   {
     id: 'password-reset-phishing',
@@ -242,17 +235,13 @@ The Instagram Team`,
   }
 ];
 
-/**
- * All User Templates
- */
+
 export const MOCK_ALL_USER_TEMPLATES = [
   ...MOCK_SYSTEM_TEMPLATES,
   ...MOCK_PHISHING_TEMPLATES
 ];
 
-/**
- * Helper: Get templates by category
- */
+
 export const getUserTemplatesByCategory = (category: 'phishing' | 'system') => {
   return category === 'phishing' ? MOCK_PHISHING_TEMPLATES : MOCK_SYSTEM_TEMPLATES;
 };

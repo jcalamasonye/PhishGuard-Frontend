@@ -1,13 +1,8 @@
-/**
- * Admin Reports Mock Data
- * All mock data for analytics and reporting
- */
+
 
 import { DepartmentPerformance, RiskAssessment, TopPerformer, OverallMetrics, QuizPerformanceData } from '@/types/reports';
 
-/**
- * Overall Metrics
- */
+
 export const MOCK_OVERALL_METRICS: OverallMetrics = {
   totalCampaigns: 24,
   totalUsers: 250,
@@ -17,9 +12,7 @@ export const MOCK_OVERALL_METRICS: OverallMetrics = {
   improvementRate: 12
 };
 
-/**
- * Department Performance
- */
+
 export const MOCK_DEPARTMENT_PERFORMANCE: DepartmentPerformance[] = [
   {
     department: 'IT',
@@ -71,9 +64,7 @@ export const MOCK_DEPARTMENT_PERFORMANCE: DepartmentPerformance[] = [
   }
 ];
 
-/**
- * Risk Assessment Distribution
- */
+
 export const MOCK_RISK_ASSESSMENT: RiskAssessment[] = [
   {
     level: 'critical',
@@ -101,9 +92,7 @@ export const MOCK_RISK_ASSESSMENT: RiskAssessment[] = [
   }
 ];
 
-/**
- * Top Performers
- */
+
 export const MOCK_TOP_PERFORMERS: TopPerformer[] = [
   {
     id: '8',
@@ -147,9 +136,7 @@ export const MOCK_TOP_PERFORMERS: TopPerformer[] = [
   }
 ];
 
-/**
- * Quiz Performance Data
- */
+
 export const MOCK_QUIZ_PERFORMANCE: QuizPerformanceData[] = [
   {
     campaignName: 'Q4 Security Awareness',
@@ -177,9 +164,7 @@ export const MOCK_QUIZ_PERFORMANCE: QuizPerformanceData[] = [
   }
 ];
 
-/**
- * Click Rate Trend (6 months)
- */
+
 export const MOCK_CLICK_RATE_TREND = [
   { month: 'Jul', clickRate: 24, reportRate: 8 },
   { month: 'Aug', clickRate: 22, reportRate: 10 },
@@ -189,9 +174,7 @@ export const MOCK_CLICK_RATE_TREND = [
   { month: 'Dec', clickRate: 16, reportRate: 16 }
 ];
 
-/**
- * Quiz Score Trend (6 months)
- */
+
 export const MOCK_QUIZ_SCORE_TREND = [
   { month: 'Jul', averageScore: 72 },
   { month: 'Aug', averageScore: 75 },
@@ -201,9 +184,7 @@ export const MOCK_QUIZ_SCORE_TREND = [
   { month: 'Dec', averageScore: 82 }
 ];
 
-/**
- * Campaign Performance Comparison
- */
+
 export const MOCK_CAMPAIGN_COMPARISON = [
   { name: 'Q4 Awareness', clickRate: 18, quizScore: 78, reportRate: 12 },
   { name: 'Executive Test', clickRate: 12, quizScore: 85, reportRate: 18 },
@@ -211,9 +192,7 @@ export const MOCK_CAMPAIGN_COMPARISON = [
   { name: 'Bank Alert', clickRate: 15, quizScore: 82, reportRate: 15 }
 ];
 
-/**
- * Click Rate Trend with Campaigns (for ClickRateTrend component)
- */
+
 export const MOCK_CLICK_RATE_TREND_WITH_CAMPAIGNS = [
   { month: 'Jun', clickRate: 24, campaigns: 8 },
   { month: 'Jul', clickRate: 22, campaigns: 9 },
@@ -223,9 +202,7 @@ export const MOCK_CLICK_RATE_TREND_WITH_CAMPAIGNS = [
   { month: 'Nov', clickRate: 16, campaigns: 10 }
 ];
 
-/**
- * Most Clicked Templates (for MostClickedTemplates component)
- */
+
 export const MOCK_MOST_CLICKED_TEMPLATES = [
   { name: 'Password Reset', clicks: 145, sent: 450 },
   { name: 'Package Delivery', clicks: 132, sent: 480 },
@@ -234,44 +211,34 @@ export const MOCK_MOST_CLICKED_TEMPLATES = [
   { name: 'IT Security', clicks: 76, sent: 380 }
 ];
 
-/**
- * Department Click Rates (for DepartmentClickRate component)
- */
+
 export const MOCK_DEPARTMENT_CLICK_RATES = MOCK_DEPARTMENT_PERFORMANCE.map(dept => ({
   department: dept.department,
   clickRate: dept.averageClickRate
 }));
 
-/**
- * High Risk Users (for RiskAssessmentCards component)
- */
+
 export const MOCK_HIGH_RISK_USERS = [
   { name: 'Michael Brown', department: 'Sales', clickRate: 83.3, campaigns: 6 },
   { name: 'Lisa Anderson', department: 'Marketing', clickRate: 75, campaigns: 8 },
   { name: 'David Miller', department: 'Sales', clickRate: 71.4, campaigns: 7 }
 ];
 
-/**
- * Medium Risk Users (for RiskAssessmentCards component)
- */
+
 export const MOCK_MEDIUM_RISK_USERS = [
   { name: 'Jennifer Wilson', department: 'Sales', clickRate: 60, campaigns: 6 },
   { name: 'Robert Taylor', department: 'Marketing', clickRate: 55.3, campaigns: 7 },
   { name: 'Sarah Davis', department: 'Sales', clickRate: 47.5, campaigns: 8 }
 ];
 
-/**
- * Low Risk Users (for RiskAssessmentCards component)
- */
+
 export const MOCK_LOW_RISK_USERS = [
   { name: 'Emily Johnson', department: 'Engineering', clickRate: 13.3, campaigns: 15 },
   { name: 'James Smith', department: 'Finance', clickRate: 10, campaigns: 10 },
   { name: 'Amanda Lee', department: 'Engineering', clickRate: 8.3, campaigns: 12 }
 ];
 
-/**
- * Quiz Performance Trend (for QuizPerformanceCharts component)
- */
+
 export const MOCK_QUIZ_PERFORMANCE_TREND = [
   { month: 'Jun', avgScore: 72, participants: 95 },
   { month: 'Jul', avgScore: 75, participants: 98 },
@@ -281,9 +248,7 @@ export const MOCK_QUIZ_PERFORMANCE_TREND = [
   { month: 'Nov', avgScore: 82, participants: 112 }
 ];
 
-/**
- * Missed Quiz Questions (for QuizPerformanceCharts component)
- */
+
 export const MOCK_MISSED_QUESTIONS = [
   { topic: 'Identifying phishing URLs', missed: 88, total: 189, percentage: 46.6 },
   { topic: 'Sender verification', missed: 76, total: 189, percentage: 40.2 },
@@ -292,9 +257,7 @@ export const MOCK_MISSED_QUESTIONS = [
   { topic: 'Spotting generic greetings', missed: 65, total: 189, percentage: 34.4 }
 ];
 
-/**
- * Helper: Get all analytics data
- */
+
 export const getAllAnalyticsData = () => ({
   overallMetrics: MOCK_OVERALL_METRICS,
   departmentPerformance: MOCK_DEPARTMENT_PERFORMANCE,

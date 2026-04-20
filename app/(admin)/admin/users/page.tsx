@@ -104,7 +104,7 @@ export default function UserManagementPage() {
       const text = await file.text();
       const lines = text.split('\n').filter((line) => line.trim().length > 0);
 
-      // Skip header row if it looks like one
+      
       const startIndex = lines[0]?.toLowerCase().includes('name') ? 1 : 0;
 
       const users = lines.slice(startIndex).map((line) => {

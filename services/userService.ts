@@ -2,8 +2,8 @@ import apiClient from '@/lib/api-client';
 import type { BackendResponse } from '@/lib/api-client';
 import type { User, AddUserFormData, UserPerformanceMetrics, UserCampaignHistory } from '@/types/user';
 
-// The backend returns a flat user object without computed stats.
-// We normalize it to match what the frontend User interface expects.
+
+
 function normalizeUser(raw: Record<string, unknown>): User {
   return {
     id: raw.id as string,
@@ -64,7 +64,7 @@ export const userService = {
     if (params?.page) query.set('page', String(params.page));
     if (params?.limit) query.set('limit', String(params.limit));
 
-    // Only fetch regular users, not admins
+    
     query.set('role', 'USER');
 
     const response = await apiClient.get<{

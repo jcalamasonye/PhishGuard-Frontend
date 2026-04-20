@@ -1,41 +1,35 @@
-/**
- * Theme Configuration
- * Centralized theme settings and design tokens
- * Usage: import { theme } from '@/lib/config/theme.config';
- */
 
-/**
- * Color palette - semantic color names
- */
+
+
 export const colorPalette = {
   primary: {
-    main: '#2563eb', // blue-600
-    light: '#3b82f6', // blue-500
-    dark: '#1d4ed8', // blue-700
+    main: '#2563eb', 
+    light: '#3b82f6', 
+    dark: '#1d4ed8', 
     contrast: '#ffffff',
   },
   success: {
-    main: '#16a34a', // green-600
-    light: '#22c55e', // green-500
-    dark: '#15803d', // green-700
+    main: '#16a34a', 
+    light: '#22c55e', 
+    dark: '#15803d', 
     contrast: '#ffffff',
   },
   warning: {
-    main: '#ca8a04', // yellow-600
-    light: '#eab308', // yellow-500
-    dark: '#a16207', // yellow-700
+    main: '#ca8a04', 
+    light: '#eab308', 
+    dark: '#a16207', 
     contrast: '#ffffff',
   },
   danger: {
-    main: '#dc2626', // red-600
-    light: '#ef4444', // red-500
-    dark: '#b91c1c', // red-700
+    main: '#dc2626', 
+    light: '#ef4444', 
+    dark: '#b91c1c', 
     contrast: '#ffffff',
   },
   info: {
-    main: '#0891b2', // cyan-600
-    light: '#06b6d4', // cyan-500
-    dark: '#0e7490', // cyan-700
+    main: '#0891b2', 
+    light: '#06b6d4', 
+    dark: '#0e7490', 
     contrast: '#ffffff',
   },
   gray: {
@@ -52,23 +46,21 @@ export const colorPalette = {
   },
 } as const;
 
-/**
- * Typography configuration
- */
+
 export const typography = {
   fontFamily: {
     sans: 'var(--font-geist-sans)',
     mono: 'var(--font-geist-mono)',
   },
   fontSize: {
-    xs: '0.75rem',    // 12px
-    sm: '0.875rem',   // 14px
-    base: '1rem',     // 16px
-    lg: '1.125rem',   // 18px
-    xl: '1.25rem',    // 20px
-    '2xl': '1.5rem',  // 24px
-    '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem', // 36px
+    xs: '0.75rem',    
+    sm: '0.875rem',   
+    base: '1rem',     
+    lg: '1.125rem',   
+    xl: '1.25rem',    
+    '2xl': '1.5rem',  
+    '3xl': '1.875rem', 
+    '4xl': '2.25rem', 
   },
   fontWeight: {
     normal: 400,
@@ -83,42 +75,36 @@ export const typography = {
   },
 } as const;
 
-/**
- * Spacing scale (in rem)
- */
+
 export const spacing = {
   0: '0',
-  1: '0.25rem',  // 4px
-  2: '0.5rem',   // 8px
-  3: '0.75rem',  // 12px
-  4: '1rem',     // 16px
-  5: '1.25rem',  // 20px
-  6: '1.5rem',   // 24px
-  8: '2rem',     // 32px
-  10: '2.5rem',  // 40px
-  12: '3rem',    // 48px
-  16: '4rem',    // 64px
-  20: '5rem',    // 80px
-  24: '6rem',    // 96px
+  1: '0.25rem',  
+  2: '0.5rem',   
+  3: '0.75rem',  
+  4: '1rem',     
+  5: '1.25rem',  
+  6: '1.5rem',   
+  8: '2rem',     
+  10: '2.5rem',  
+  12: '3rem',    
+  16: '4rem',    
+  20: '5rem',    
+  24: '6rem',    
 } as const;
 
-/**
- * Border radius scale
- */
+
 export const borderRadius = {
   none: '0',
-  sm: '0.125rem',   // 2px
-  default: '0.25rem', // 4px
-  md: '0.375rem',   // 6px
-  lg: '0.5rem',     // 8px
-  xl: '0.75rem',    // 12px
-  '2xl': '1rem',    // 16px
+  sm: '0.125rem',   
+  default: '0.25rem', 
+  md: '0.375rem',   
+  lg: '0.5rem',     
+  xl: '0.75rem',    
+  '2xl': '1rem',    
   full: '9999px',
 } as const;
 
-/**
- * Shadow scale
- */
+
 export const shadows = {
   sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
   default: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
@@ -129,9 +115,7 @@ export const shadows = {
   none: 'none',
 } as const;
 
-/**
- * Breakpoint configuration (matches Tailwind)
- */
+
 export const breakpoints = {
   sm: '640px',
   md: '768px',
@@ -140,9 +124,7 @@ export const breakpoints = {
   '2xl': '1536px',
 } as const;
 
-/**
- * Z-index scale
- */
+
 export const zIndex = {
   dropdown: 10,
   sticky: 20,
@@ -153,18 +135,14 @@ export const zIndex = {
   tooltip: 70,
 } as const;
 
-/**
- * Animation durations (in ms)
- */
+
 export const duration = {
   fast: 150,
   normal: 300,
   slow: 500,
 } as const;
 
-/**
- * Component-specific configurations
- */
+
 export const components = {
   button: {
     height: {
@@ -196,13 +174,11 @@ export const components = {
     height: '73px',
   },
   sidebar: {
-    width: '256px', // 64 * 4 = 256px (w-64)
+    width: '256px', 
   },
 } as const;
 
-/**
- * Complete theme object
- */
+
 export const theme = {
   colors: colorPalette,
   typography,
@@ -215,7 +191,5 @@ export const theme = {
   components,
 } as const;
 
-/**
- * Export type for theme
- */
+
 export type Theme = typeof theme;

@@ -34,7 +34,7 @@ export default function ProfileSettingsPage() {
     browserNotifications: false
   });
 
-  // Load current user data
+  
   useEffect(() => {
     if (user) {
       setFullName(user.name || '');
@@ -85,7 +85,7 @@ export default function ProfileSettingsPage() {
   };
 
   const handleSavePreferences = () => {
-    // Notification preferences endpoint not yet implemented on backend
+    
     console.log('Save preferences:', notifications);
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 3000);

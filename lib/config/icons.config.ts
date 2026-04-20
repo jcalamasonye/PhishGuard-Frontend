@@ -1,8 +1,4 @@
-/**
- * Icon Configuration
- * Centralized icon component registry with type safety
- * Usage: import { IconRegistry } from '@/lib/config/icons.config';
- */
+
 
 import { type LucideIcon } from 'lucide-react';
 import {
@@ -16,9 +12,7 @@ import {
   CATEGORY_ICONS,
 } from '@/lib/constants/icons';
 
-/**
- * Icon registry - maps all icon categories
- */
+
 export const IconRegistry = {
   metrics: METRIC_ICONS,
   achievements: ACHIEVEMENT_ICONS,
@@ -30,9 +24,7 @@ export const IconRegistry = {
   categories: CATEGORY_ICONS,
 } as const;
 
-/**
- * Type-safe icon getter with fallback
- */
+
 export function getIconComponent<T extends keyof typeof IconRegistry>(
   category: T,
   name: string,
@@ -42,9 +34,7 @@ export function getIconComponent<T extends keyof typeof IconRegistry>(
   return (iconMap as Record<string, LucideIcon>)[name] || fallback;
 }
 
-/**
- * Icon size configurations (numeric values for width/height)
- */
+
 export const ICON_SIZES = {
   xs: 12,
   sm: 16,
@@ -55,18 +45,14 @@ export const ICON_SIZES = {
   '3xl': 48,
 } as const;
 
-/**
- * Default icon props
- */
+
 export const DEFAULT_ICON_PROPS = {
   strokeWidth: 2,
   size: ICON_SIZES.md,
   className: '',
 } as const;
 
-/**
- * Icon variant configurations
- */
+
 export const ICON_VARIANTS = {
   default: {
     strokeWidth: 2,
@@ -82,9 +68,7 @@ export const ICON_VARIANTS = {
   },
 } as const;
 
-/**
- * Helper to get icon props by size
- */
+
 export const getIconProps = (size: keyof typeof ICON_SIZES = 'md') => ({
   size: ICON_SIZES[size],
   strokeWidth: DEFAULT_ICON_PROPS.strokeWidth,

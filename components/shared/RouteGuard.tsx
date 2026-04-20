@@ -23,26 +23,26 @@ export default function RouteGuard({
   useEffect(() => {
     if (isLoading) return;
 
-    // Auth pages: redirect away if already logged in
+    
     if (redirectIfAuthenticated && isAuthenticated) {
       router.replace(isAdmin ? '/admin/dashboard' : '/dashboard');
       return;
     }
 
-    // Protected pages: redirect to login if not authenticated
+    
     if (requireAuth && !isAuthenticated) {
       router.replace('/login');
       return;
     }
 
-    // Admin pages: redirect non-admins to user dashboard
+    
     if (requireAdmin && isAuthenticated && !isAdmin) {
       router.replace('/dashboard');
       return;
     }
   }, [isLoading, isAuthenticated, isAdmin, requireAuth, requireAdmin, redirectIfAuthenticated, router]);
 
-  // Show nothing while checking auth state
+  
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -51,7 +51,7 @@ export default function RouteGuard({
     );
   }
 
-  // Don't render children if redirecting
+  
   if (redirectIfAuthenticated && isAuthenticated) return null;
   if (requireAuth && !isAuthenticated) return null;
   if (requireAdmin && !isAdmin) return null;

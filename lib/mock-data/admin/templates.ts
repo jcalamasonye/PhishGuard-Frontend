@@ -1,13 +1,8 @@
-/**
- * Admin Templates Mock Data
- * All mock data for template management
- */
+
 
 import { EmailTemplate, TemplateDifficulty, TemplateCategory } from '@/types/template';
 
-/**
- * Mock Email Templates
- */
+
 export const MOCK_EMAIL_TEMPLATES: EmailTemplate[] = [
   {
     id: 'password-reset-1',
@@ -125,9 +120,7 @@ export const MOCK_EMAIL_TEMPLATES: EmailTemplate[] = [
   }
 ];
 
-/**
- * Template Stats
- */
+
 export const MOCK_TEMPLATE_STATS = {
   total: MOCK_EMAIL_TEMPLATES.length,
   byDifficulty: {
@@ -147,9 +140,7 @@ export const MOCK_TEMPLATE_STATS = {
   averageClickRate: 18
 };
 
-/**
- * Individual Template Performance Statistics
- */
+
 export const MOCK_TEMPLATE_PERFORMANCE: Record<string, {
   timesUsed: number;
   avgClickRate: number;
@@ -162,23 +153,17 @@ export const MOCK_TEMPLATE_PERFORMANCE: Record<string, {
   'vendor-invoice-1': { timesUsed: 19, avgClickRate: 15.3 }
 };
 
-/**
- * Helper: Get templates by difficulty
- */
+
 export const getTemplatesByDifficulty = (difficulty: TemplateDifficulty) => {
   return MOCK_EMAIL_TEMPLATES.filter(t => t.difficulty === difficulty);
 };
 
-/**
- * Helper: Get templates by category
- */
+
 export const getTemplatesByCategory = (category: TemplateCategory) => {
   return MOCK_EMAIL_TEMPLATES.filter(t => t.category === category);
 };
 
-/**
- * Helper: Get template by ID
- */
+
 export const getAdminTemplatesByCategory = (category: TemplateCategory) => {
   return MOCK_EMAIL_TEMPLATES.filter(t => t.category === category);
 };
@@ -187,9 +172,7 @@ export const getAdminTemplateById = (id: string) => {
   return MOCK_EMAIL_TEMPLATES.find(t => t.id === id) || null;
 };
 
-/**
- * Helper: Get template performance stats by ID
- */
+
 export const getTemplateStats = (templateId: string) => {
   return MOCK_TEMPLATE_PERFORMANCE[templateId] || { timesUsed: 0, avgClickRate: 0 };
 };

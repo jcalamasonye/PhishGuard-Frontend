@@ -1,11 +1,7 @@
-/**
- * Color System Constants
- * Centralized Tailwind color classes for consistency
- * Usage: import { COLORS } from '@/lib/constants';
- */
+
 
 export const COLORS = {
-  // Primary Colors (Blue)
+  
   primary: {
     50: 'bg-blue-50',
     100: 'bg-blue-100',
@@ -25,7 +21,7 @@ export const COLORS = {
     ring: 'ring-blue-500',
   },
 
-  // Success Colors (Green)
+  
   success: {
     50: 'bg-green-50',
     100: 'bg-green-100',
@@ -42,7 +38,7 @@ export const COLORS = {
     border: 'border-green-200',
   },
 
-  // Warning Colors (Yellow/Orange)
+  
   warning: {
     50: 'bg-yellow-50',
     100: 'bg-yellow-100',
@@ -58,7 +54,7 @@ export const COLORS = {
     bgLight: 'bg-yellow-50',
   },
 
-  // Danger/Error Colors (Red)
+  
   danger: {
     50: 'bg-red-50',
     100: 'bg-red-100',
@@ -75,7 +71,7 @@ export const COLORS = {
     border: 'border-red-200',
   },
 
-  // Info Colors (Cyan/Teal)
+  
   info: {
     50: 'bg-cyan-50',
     100: 'bg-cyan-100',
@@ -91,7 +87,7 @@ export const COLORS = {
     bgLight: 'bg-cyan-50',
   },
 
-  // Pink Colors
+  
   pink: {
     50: 'bg-pink-50',
     100: 'bg-pink-100',
@@ -107,7 +103,7 @@ export const COLORS = {
     bgLight: 'bg-pink-50',
   },
 
-  // Purple Colors
+  
   purple: {
     50: 'bg-purple-50',
     100: 'bg-purple-100',
@@ -123,7 +119,7 @@ export const COLORS = {
     bgLight: 'bg-purple-50',
   },
 
-  // Gray/Neutral Colors
+  
   gray: {
     50: 'bg-gray-50',
     100: 'bg-gray-100',
@@ -143,7 +139,7 @@ export const COLORS = {
     },
   },
 
-  // Metric Card Colors (Dashboard)
+  
   metrics: {
     campaign: 'bg-blue-300',
     click: 'bg-pink-300',
@@ -152,7 +148,7 @@ export const COLORS = {
     users: 'bg-purple-300',
   },
 
-  // Status Colors
+  
   status: {
     active: {
       bg: 'bg-green-100',
@@ -176,21 +172,21 @@ export const COLORS = {
     },
   },
 
-  // Background Colors
+  
   background: {
     white: 'bg-white',
     light: 'bg-gray-50',
     dark: 'bg-gray-900',
   },
 
-  // Border Colors
+  
   border: {
     light: 'border-gray-200',
     normal: 'border-gray-300',
     dark: 'border-gray-400',
   },
 
-  // Text Colors
+  
   text: {
     primary: 'text-gray-900',
     secondary: 'text-gray-600',
@@ -199,16 +195,12 @@ export const COLORS = {
   },
 } as const;
 
-/**
- * Dynamic color getter for metric cards
- */
+
 export const getMetricColor = (iconType: 'campaign' | 'click' | 'quiz' | 'improvement' | 'users'): string => {
   return COLORS.metrics[iconType];
 };
 
-/**
- * Dynamic status color getter
- */
+
 export const getStatusColors = (status: 'active' | 'completed' | 'scheduled' | 'draft') => {
   return COLORS.status[status];
 };

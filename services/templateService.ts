@@ -2,7 +2,7 @@ import apiClient from '@/lib/api-client';
 import type { BackendResponse } from '@/lib/api-client';
 import type { EmailTemplate, TemplateDifficulty, TemplateCategory } from '@/types/template';
 
-// Map category to a default icon since the backend doesn't store icons
+
 const CATEGORY_ICONS: Record<string, string> = {
   PASSWORD: 'lock',
   PACKAGE: 'package',

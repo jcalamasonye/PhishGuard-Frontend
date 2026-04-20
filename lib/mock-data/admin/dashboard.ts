@@ -1,6 +1,4 @@
-/**
- * Admin Dashboard Mock Data
- */
+
 
 import { MetricCardData, ChartDataPoint, CampaignTableRow } from '@/types/dashboard';
 import { COLORS } from '@/lib/constants/colors';

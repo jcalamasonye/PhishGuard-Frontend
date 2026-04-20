@@ -11,10 +11,10 @@ import type {
   AuthResponse,
 } from '@/types/auth';
 
-// This hook wraps the AuthContext and exposes the same interface
-// that all existing auth form components expect: { login, signup,
-// resetPassword, updatePassword, logout, isSubmitting }.
-// It handles loading state and error-to-AuthResponse conversion
+
+
+
+
 
 export function useAuth() {
   const auth = useAuthContext();

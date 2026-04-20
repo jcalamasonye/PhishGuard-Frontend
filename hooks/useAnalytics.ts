@@ -24,7 +24,7 @@ export function useAnalytics(): UseAnalyticsReturn {
     setLoading(true);
     setError(null);
 
-    // Simulate API call
+    
     setTimeout(() => {
       setData({
         totalUsers: 150,

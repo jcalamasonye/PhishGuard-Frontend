@@ -27,7 +27,7 @@ export function useFormState<T extends Record<string, unknown>>(
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
 
-    // Clear error for this field
+    
     if (errors[name as keyof T]) {
       setErrors(prev => {
         const newErrors = { ...prev };
@@ -43,7 +43,7 @@ export function useFormState<T extends Record<string, unknown>>(
       [field]: value
     }));
 
-    // Clear error for this field
+    
     if (errors[field]) {
       setErrors(prev => {
         const newErrors = { ...prev };

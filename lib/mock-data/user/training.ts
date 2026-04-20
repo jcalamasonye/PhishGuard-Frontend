@@ -1,11 +1,6 @@
-/**
- * User Training Mock Data
- * All mock data for training resources and pages
- */
 
-/**
- * Featured Training Resources
- */
+
+
 export const MOCK_FEATURED_RESOURCES = [
   {
     id: '1',
@@ -27,9 +22,7 @@ export const MOCK_FEATURED_RESOURCES = [
   }
 ];
 
-/**
- * Training Categories
- */
+
 export const MOCK_TRAINING_CATEGORIES = [
   {
     title: 'Beginner Guides',
@@ -61,9 +54,7 @@ export const MOCK_TRAINING_CATEGORIES = [
   }
 ];
 
-/**
- * Downloadable Resources
- */
+
 export const MOCK_DOWNLOADABLE_RESOURCES = [
   {
     title: 'Email Safety Check list',
@@ -91,9 +82,7 @@ export const MOCK_DOWNLOADABLE_RESOURCES = [
   }
 ];
 
-/**
- * Video Tutorials
- */
+
 export const MOCK_VIDEO_TUTORIALS = [
   { title: 'Understanding Phishing in 3 minutes', duration: '3:26' },
   { title: 'How Hackers Trick You With Fake Pages', duration: '3:26' },
@@ -101,9 +90,7 @@ export const MOCK_VIDEO_TUTORIALS = [
   { title: 'Understanding Phishing in 3 minutes', duration: '3:26' }
 ];
 
-/**
- * Red Flags (for training page)
- */
+
 export const MOCK_RED_FLAGS = [
   {
     id: '1',
@@ -145,9 +132,7 @@ export const MOCK_RED_FLAGS = [
   }
 ];
 
-/**
- * Best Practices (for training page)
- */
+
 export const MOCK_BEST_PRACTICES = [
   {
     id: '1',
@@ -171,9 +156,7 @@ export const MOCK_BEST_PRACTICES = [
   }
 ];
 
-/**
- * Training Resources Widget Items
- */
+
 export const MOCK_TRAINING_RESOURCES_WIDGET = [
   {
     id: '1',
@@ -195,9 +178,7 @@ export const MOCK_TRAINING_RESOURCES_WIDGET = [
   }
 ];
 
-/**
- * Helper: Get all training resources
- */
+
 export const getTrainingResources = () => ({
   featured: MOCK_FEATURED_RESOURCES,
   categories: MOCK_TRAINING_CATEGORIES,

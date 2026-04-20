@@ -1,13 +1,8 @@
-/**
- * User Dashboard Mock Data
- * All mock data for the user dashboard page
- */
+
 
 import { MetricCardData, Achievement, ChartDataPoint, ActivityItem, QuickTip } from '@/types/dashboard';
 
-/**
- * Dashboard Metrics
- */
+
 export const MOCK_USER_METRICS: MetricCardData[] = [
   {
     id: '1',
@@ -43,9 +38,7 @@ export const MOCK_USER_METRICS: MetricCardData[] = [
   }
 ];
 
-/**
- * User Achievements
- */
+
 export const MOCK_USER_ACHIEVEMENTS: Achievement[] = [
   {
     id: '1',
@@ -87,9 +80,7 @@ export const MOCK_USER_ACHIEVEMENTS: Achievement[] = [
   }
 ];
 
-/**
- * Progress Chart Data
- */
+
 export const MOCK_USER_CHART_DATA: ChartDataPoint[] = [
   { name: 'Jun', quizScore: 65, clickRate: 32 },
   { name: 'Jul', quizScore: 70, clickRate: 28 },
@@ -99,9 +90,7 @@ export const MOCK_USER_CHART_DATA: ChartDataPoint[] = [
   { name: 'Nov', quizScore: 85, clickRate: 18 }
 ];
 
-/**
- * Activity Feed Items
- */
+
 export const MOCK_USER_ACTIVITIES: ActivityItem[] = [
   {
     id: '1',
@@ -141,9 +130,7 @@ export const MOCK_USER_ACTIVITIES: ActivityItem[] = [
   }
 ];
 
-/**
- * Quick Tips
- */
+
 export const MOCK_QUICK_TIPS: QuickTip[] = [
   { id: '1', text: 'Always verify sender addresses', completed: false },
   { id: '2', text: 'Hover over links before clicking', completed: false },
@@ -151,9 +138,7 @@ export const MOCK_QUICK_TIPS: QuickTip[] = [
   { id: '4', text: 'Report suspicious emails immediately', completed: false }
 ];
 
-/**
- * Helper: Get all dashboard data
- */
+
 export const getUserDashboardData = () => ({
   metrics: MOCK_USER_METRICS,
   achievements: MOCK_USER_ACHIEVEMENTS,

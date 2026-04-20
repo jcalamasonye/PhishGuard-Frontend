@@ -46,7 +46,7 @@ export function useCampaigns(): UseCampaignsReturn {
     setLoading(true);
     setError(null);
     
-    // Simulate API call
+    
     setTimeout(() => {
       setCampaigns(MOCK_CAMPAIGNS);
       setLoading(false);

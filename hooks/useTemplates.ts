@@ -46,7 +46,7 @@ export function useTemplates(): UseTemplatesReturn {
     setLoading(true);
     setError(null);
     
-    // Simulate API call
+    
     setTimeout(() => {
       setTemplates(MOCK_EMAIL_TEMPLATES);
       setLoading(false);

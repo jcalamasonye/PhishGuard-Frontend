@@ -1,13 +1,8 @@
-/**
- * Admin Users Mock Data
- * All mock data for user management
- */
+
 
 import { User } from '@/types/user';
 
-/**
- * Mock Users List
- */
+
 export const MOCK_USERS: User[] = [
   {
     id: '1',
@@ -141,9 +136,7 @@ export const MOCK_USERS: User[] = [
   }
 ];
 
-/**
- * User Stats Summary
- */
+
 export const MOCK_USER_STATS = {
   total: MOCK_USERS.length,
   active: MOCK_USERS.filter(u => {
@@ -157,9 +150,7 @@ export const MOCK_USER_STATS = {
   averageQuizScore: Math.round(MOCK_USERS.reduce((sum, u) => sum + u.averageQuizScore, 0) / MOCK_USERS.length)
 };
 
-/**
- * Department List
- */
+
 export const MOCK_DEPARTMENTS = [
   'All Departments',
   'Marketing',
@@ -170,9 +161,7 @@ export const MOCK_DEPARTMENTS = [
   'Operations'
 ];
 
-/**
- * User Performance Levels
- */
+
 export const MOCK_PERFORMANCE_LEVELS = [
   'All Levels',
   'High Risk (>20% click rate)',
@@ -180,9 +169,7 @@ export const MOCK_PERFORMANCE_LEVELS = [
   'Low Risk (<10% click rate)'
 ];
 
-/**
- * User Detail (for individual user page)
- */
+
 export const MOCK_USER_DETAIL = {
   id: '1',
   name: 'Sarah Johnson',
@@ -240,17 +227,13 @@ export const MOCK_USER_DETAIL = {
   ]
 };
 
-/**
- * Helper: Get users by department
- */
+
 export const getUsersByDepartment = (department: string) => {
   if (department === 'All Departments') return MOCK_USERS;
   return MOCK_USERS.filter(u => u.department === department);
 };
 
-/**
- * Helper: Get users by performance level
- */
+
 export const getUsersByPerformance = (level: string) => {
   if (level === 'All Levels') return MOCK_USERS;
   
@@ -267,25 +250,19 @@ export const getUsersByPerformance = (level: string) => {
   return MOCK_USERS;
 };
 
-/**
- * Helper: Get user by ID
- */
+
 export const getUserById = (id: string) => {
   return MOCK_USERS.find(u => u.id === id) || null;
 };
 
-/**
- * Helper: Get top performers
- */
+
 export const getTopPerformers = (limit: number = 5) => {
   return MOCK_USERS
     .sort((a, b) => b.averageQuizScore - a.averageQuizScore)
     .slice(0, limit);
 };
 
-/**
- * Helper: Get high risk users
- */
+
 export const getHighRiskUsers = (limit: number = 10) => {
   return MOCK_USERS
     .filter(u => u.clickRate > 20)
@@ -293,9 +270,7 @@ export const getHighRiskUsers = (limit: number = 10) => {
     .slice(0, limit);
 };
 
-/**
- * User Detail Profile Data (for individual user pages)
- */
+
 export const MOCK_USER_DETAILS: Record<string, {
   id: string;
   name: string;
@@ -340,9 +315,7 @@ export const MOCK_USER_DETAILS: Record<string, {
   }
 };
 
-/**
- * User Click Rate Trend Data
- */
+
 export const MOCK_USER_CLICK_RATE_TREND: Record<string, Array<{ name: string; clickRate: number }>> = {
   '2': [
     { name: 'Jun', clickRate: 100 },
@@ -354,9 +327,7 @@ export const MOCK_USER_CLICK_RATE_TREND: Record<string, Array<{ name: string; cl
   ]
 };
 
-/**
- * User Quiz Score Trend Data
- */
+
 export const MOCK_USER_QUIZ_SCORE_TREND: Record<string, Array<{ name: string; quizScore: number }>> = {
   '2': [
     { name: 'Jun', quizScore: 55 },
@@ -368,9 +339,7 @@ export const MOCK_USER_QUIZ_SCORE_TREND: Record<string, Array<{ name: string; qu
   ]
 };
 
-/**
- * User Campaign History
- */
+
 export const MOCK_USER_CAMPAIGN_HISTORY: Record<string, Array<{
   id: string;
   campaignName: string;
@@ -444,30 +413,22 @@ export const MOCK_USER_CAMPAIGN_HISTORY: Record<string, Array<{
   ]
 };
 
-/**
- * Helper: Get user detail by ID
- */
+
 export const getUserDetail = (userId: string) => {
   return MOCK_USER_DETAILS[userId] || MOCK_USER_DETAILS['2'];
 };
 
-/**
- * Helper: Get user click rate trend by ID
- */
+
 export const getUserClickRateTrend = (userId: string) => {
   return MOCK_USER_CLICK_RATE_TREND[userId] || MOCK_USER_CLICK_RATE_TREND['2'];
 };
 
-/**
- * Helper: Get user quiz score trend by ID
- */
+
 export const getUserQuizScoreTrend = (userId: string) => {
   return MOCK_USER_QUIZ_SCORE_TREND[userId] || MOCK_USER_QUIZ_SCORE_TREND['2'];
 };
 
-/**
- * Helper: Get user campaign history by ID
- */
+
 export const getUserCampaignHistory = (userId: string) => {
   return MOCK_USER_CAMPAIGN_HISTORY[userId] || MOCK_USER_CAMPAIGN_HISTORY['2'];
 };

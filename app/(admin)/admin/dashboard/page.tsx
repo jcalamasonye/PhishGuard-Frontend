@@ -38,7 +38,7 @@ export default function AdminDashboardPage() {
           analyticsService.getTemplatePerformance(),
         ]);
 
-        // Build metric cards from overview
+        
         setMetrics([
           {
             id: '1',
@@ -70,7 +70,7 @@ export default function AdminDashboardPage() {
           },
         ]);
 
-        // Map trend data for the chart
+        
         setClickRateData(
           trend.map((point) => ({
             name: new Date(point.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
@@ -78,7 +78,7 @@ export default function AdminDashboardPage() {
           }))
         );
 
-        // Map template performance for the chart
+        
         setTemplatePerformance(
           templatePerfResult.map((t) => ({
             name: t.name,
@@ -86,7 +86,7 @@ export default function AdminDashboardPage() {
           }))
         );
 
-        // Map recent campaigns for the table
+        
         setRecentCampaigns(
           campaignsResult.campaigns.map((c) => ({
             id: c.id,

@@ -35,11 +35,11 @@ export default function CreateCampaignPage() {
     recipientIds: []
   });
 
-  // If a templateId was passed via URL (from custom template creation or "Use" button)
+  
   useEffect(() => {
     const templateId = searchParams.get('templateId');
     if (templateId) {
-      // Try to restore the campaign draft saved before navigating to custom-template
+      
       const savedDraft = sessionStorage.getItem('campaignDraft');
       if (savedDraft) {
         try {
@@ -52,12 +52,12 @@ export default function CreateCampaignPage() {
       } else {
         setFormData((prev) => ({ ...prev, templateId }));
       }
-      // Template is already chosen — jump straight to Select Participants (step 3)
+      
       setCurrentStep(3);
     }
   }, [searchParams]);
 
-  // Fetch template name when templateId changes
+  
   useEffect(() => {
     const fetchTemplateName = async () => {
       if (!formData.templateId) {
@@ -133,8 +133,8 @@ export default function CreateCampaignPage() {
     }
   };
 
-  // Save in-progress campaign data before navigating to the custom template builder,
-  // so it can be restored when we return with a templateId.
+  
+  
   const handleCreateCustom = () => {
     sessionStorage.setItem('campaignDraft', JSON.stringify(formData));
     router.push('/admin/campaigns/create/custom-template');
@@ -157,7 +157,7 @@ export default function CreateCampaignPage() {
 
       const campaign = await campaignService.create(campaignData);
 
-      // If immediate launch, also launch the campaign
+      
       if (schedule.type === 'immediate') {
         await campaignService.launch(campaign.id);
       }

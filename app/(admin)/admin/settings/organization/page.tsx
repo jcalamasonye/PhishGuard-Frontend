@@ -55,7 +55,7 @@ export default function OrganizationSettingsPage() {
   const handleSaveSettings = async () => {
     setSaving(true);
     try {
-      // Organization update endpoint would go here
+      
       console.log('Save organization settings:', {
         organizationName,
         selectedColor,

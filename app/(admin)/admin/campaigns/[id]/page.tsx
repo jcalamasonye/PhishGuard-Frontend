@@ -157,8 +157,8 @@ export default function CampaignDetailsPage() {
   };
 
   const handleViewDetails = (userId: string) => {
-    // Navigate to the user's profile from the participant ID
-    // The participant table uses participant IDs, but we can look up the user
+    
+    
     const participant = users.find((u) => u.id === userId);
     if (participant) {
       console.log('View details for user:', participant.name);

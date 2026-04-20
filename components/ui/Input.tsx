@@ -18,7 +18,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     helperText, 
     leftIcon, 
     rightIcon, 
-    // showPasswordToggle,
+    
     className, 
     type = 'text', 
     ...props 

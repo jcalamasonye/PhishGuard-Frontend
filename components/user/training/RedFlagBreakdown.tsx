@@ -17,7 +17,7 @@ interface RedFlagBreakdownProps {
 }
 
 export const RedFlagBreakdown: React.FC<RedFlagBreakdownProps> = ({ redFlags }) => {
-  // If no structured red flags passed, use a simple string list format
+  
   const flags: RedFlag[] = redFlags || [];
 
   if (flags.length === 0) {

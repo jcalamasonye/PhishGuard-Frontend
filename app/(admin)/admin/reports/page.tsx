@@ -144,7 +144,7 @@ export default function ReportsAnalyticsPage() {
     );
   }
 
-  // Quiz performance data - needs a dedicated quiz analytics endpoint
+  
   const quizTrendData: { month: string; avgScore: number; participants: number }[] = [];
   const missedQuestions: { topic: string; missed: number; total: number; percentage: number }[] = [];
 

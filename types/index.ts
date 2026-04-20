@@ -1,6 +1,4 @@
-/**
- * Generic API response wrapper
- */
+
 export interface ApiResponse<T = unknown> {
   success: boolean;
   message: string;
@@ -8,31 +6,23 @@ export interface ApiResponse<T = unknown> {
   errors?: ApiError[];
 }
 
-/**
- * API error structure
- */
+
 export interface ApiError {
   field?: string;
   message: string;
   code?: string;
 }
 
-/**
- * Loading state
- */
+
 export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
 
-/**
- * Generic pagination params
- */
+
 export interface PaginationParams {
   page: number;
   limit: number;
 }
 
-/**
- * Paginated response
- */
+
 export interface PaginatedResponse<T> {
   data: T[];
   pagination: {
@@ -43,5 +33,5 @@ export interface PaginatedResponse<T> {
   };
 }
 
-// Re-export auth types
+
 export * from './auth';

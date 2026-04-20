@@ -69,7 +69,7 @@ export function useToast(): ToastContextValue {
   return context;
 }
 
-// Toast container rendered at the bottom of the provider
+
 function ToastContainer({ toasts, onRemove }: { toasts: Toast[]; onRemove: (id: string) => void }) {
   if (toasts.length === 0) return null;
 

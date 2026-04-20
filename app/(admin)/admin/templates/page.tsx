@@ -52,7 +52,7 @@ export default function TemplateLibraryPage() {
     fetchTemplates();
   }, [fetchTemplates]);
 
-  // Client-side search filtering on the already-fetched templates
+  
   const filteredTemplates = searchQuery.trim()
     ? templates.filter((t) =>
         t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -2,8 +2,8 @@ import apiClient from '@/lib/api-client';
 import type { BackendResponse } from '@/lib/api-client';
 import type { Campaign, CampaignStatus, CreateCampaignData } from '@/types/campaign';
 
-// The backend returns status as uppercase ('DRAFT', 'ACTIVE', etc.)
-// but our frontend types use lowercase ('draft', 'active', etc.)
+
+
 function normalizeCampaign(raw: Record<string, unknown>): Campaign {
   return {
     id: raw.id as string,

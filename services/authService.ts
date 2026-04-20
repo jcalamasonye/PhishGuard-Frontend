@@ -9,9 +9,9 @@ import type {
   User,
 } from '@/types/auth';
 
-// The backend returns role as uppercase ('ADMIN', 'USER')
-// but our frontend types use lowercase ('admin', 'user').
-// This normalizes the backend user object to match frontend types.
+
+
+
 function normalizeUser(backendUser: Record<string, unknown>): User {
   return {
     id: backendUser.id as string,
@@ -63,7 +63,7 @@ export const authService = {
       password: data.password,
     };
 
-    // If registering as admin, include the organization name
+    
     if ('organizationName' in data) {
       payload.organizationName = data.organizationName;
     }
@@ -86,7 +86,7 @@ export const authService = {
     try {
       await apiClient.post('/auth/logout');
     } catch {
-      // Even if the server call fails, clear local tokens
+      
     } finally {
       tokenStorage.clearTokens();
     }

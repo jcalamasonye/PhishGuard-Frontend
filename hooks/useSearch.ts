@@ -23,7 +23,7 @@ export function useSearch<T>({
   const filteredItems = useMemo(() => {
     let result = items;
 
-    // Apply search query
+    
     if (searchQuery.trim()) {
       const lowerQuery = searchQuery.toLowerCase();
       result = result.filter(item =>
@@ -37,7 +37,7 @@ export function useSearch<T>({
       );
     }
 
-    // Apply additional filters
+    
     Object.values(filters).forEach(filterFn => {
       result = result.filter(filterFn);
     });

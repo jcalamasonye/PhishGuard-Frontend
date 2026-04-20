@@ -1,13 +1,8 @@
-/**
- * Admin Campaigns Mock Data
- * All mock data for campaign management
- */
+
 
 import { Campaign, CampaignStatus } from '@/types/campaign';
 
-/**
- * Mock Campaigns List
- */
+
 export const MOCK_CAMPAIGNS: Campaign[] = [
   {
     id: '1',
@@ -89,9 +84,7 @@ export const MOCK_CAMPAIGNS: Campaign[] = [
   }
 ];
 
-/**
- * Campaign Statistics
- */
+
 export const MOCK_CAMPAIGN_STATS = {
   totalCampaigns: 24,
   activeCampaigns: 3,
@@ -103,9 +96,7 @@ export const MOCK_CAMPAIGN_STATS = {
   averageOpenRate: 85
 };
 
-/**
- * Campaign Details (for individual campaign pages)
- */
+
 export const MOCK_CAMPAIGN_DETAILS: Record<string, {
   id: string;
   name: string;
@@ -144,9 +135,7 @@ export const MOCK_CAMPAIGN_DETAILS: Record<string, {
   }
 };
 
-/**
- * User Performance in Campaigns
- */
+
 export const MOCK_CAMPAIGN_USER_PERFORMANCE: Record<string, Array<{
   id: string;
   name: string;
@@ -248,40 +237,30 @@ export const MOCK_CAMPAIGN_USER_PERFORMANCE: Record<string, Array<{
   ]
 };
 
-/**
- * Helper: Get campaigns by status
- */
+
 export const getCampaignsByStatus = (status: CampaignStatus | 'all') => {
   if (status === 'all') return MOCK_CAMPAIGNS;
   return MOCK_CAMPAIGNS.filter(c => c.status === status);
 };
 
-/**
- * Helper: Get campaign by ID
- */
+
 export const getCampaignById = (id: string) => {
   return MOCK_CAMPAIGNS.find(c => c.id === id) || null;
 };
 
-/**
- * Helper: Get recent campaigns
- */
+
 export const getRecentCampaigns = (limit: number = 5) => {
   return MOCK_CAMPAIGNS
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     .slice(0, limit);
 };
 
-/**
- * Helper: Get campaign detail by ID
- */
+
 export const getCampaignDetail = (campaignId: string) => {
   return MOCK_CAMPAIGN_DETAILS[campaignId] || MOCK_CAMPAIGN_DETAILS['1'];
 };
 
-/**
- * Helper: Get campaign user performance by campaign ID
- */
+
 export const getCampaignUserPerformance = (campaignId: string) => {
   return MOCK_CAMPAIGN_USER_PERFORMANCE[campaignId] || MOCK_CAMPAIGN_USER_PERFORMANCE['1'];
 };

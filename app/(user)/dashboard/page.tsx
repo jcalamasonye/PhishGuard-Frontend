@@ -77,7 +77,7 @@ export default function UserDashboardPage() {
 
         const { metrics: perf, campaigns } = perfResult;
 
-        // Build metric cards
+        
         setMetrics([
           {
             id: '1',
@@ -115,7 +115,7 @@ export default function UserDashboardPage() {
           },
         ]);
 
-        // Build chart data from campaign history
+        
         setChartData(
           campaigns.slice(0, 6).reverse().map((c, i) => ({
             name: `C${i + 1}`,
@@ -124,7 +124,7 @@ export default function UserDashboardPage() {
           }))
         );
 
-        // Build activity feed from quiz attempts and campaigns
+        
         const activityItems: ActivityItem[] = [];
 
         attempts.slice(0, 3).forEach((attempt) => {
@@ -151,13 +151,13 @@ export default function UserDashboardPage() {
           });
         });
 
-        // Sort by timestamp descending
+        
         activityItems.sort((a, b) =>
           new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
         );
         setActivities(activityItems.slice(0, 5));
 
-        // Compute achievements
+        
         const updatedAchievements = [...STATIC_ACHIEVEMENTS];
         if (perf.averageQuizScore >= 90) updatedAchievements[0] = { ...updatedAchievements[0], unlocked: true };
         if (attempts.length >= 5) updatedAchievements[1] = { ...updatedAchievements[1], unlocked: true };

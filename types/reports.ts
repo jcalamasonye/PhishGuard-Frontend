@@ -1,6 +1,4 @@
-/**
- * Reports and Analytics Types
- */
+
 
 export interface DepartmentPerformance {
   department: string;

@@ -65,14 +65,14 @@ export default function TrainingPage() {
           }));
           setRedFlags(templateRedFlags);
 
-          // Analyze with AI
+          
           setAiLoading(true);
           try {
             const emailText = `From: ${template.fromName} <${template.fromEmail}>\nSubject: ${template.subject}\n\n${template.body}`;
             const analysis = await aiService.analyzeEmail(emailText);
             setAiResult(analysis);
           } catch {
-            // AI service might not be available
+            
           } finally {
             setAiLoading(false);
           }
@@ -123,7 +123,7 @@ export default function TrainingPage() {
         <div className="bg-white">
           <div className="max-w-4xl mx-auto px-6 py-12">
 
-            {/* AI Analysis Result */}
+            {}
             {(aiResult || aiLoading) && (
               <Card className="bg-purple-50 border-purple-200 mb-12">
                 <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">

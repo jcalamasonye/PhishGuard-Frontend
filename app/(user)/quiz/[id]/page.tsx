@@ -81,7 +81,7 @@ export default function QuizPage() {
 
   const handleNext = async () => {
     if (isLastQuestion) {
-      // Submit quiz
+      
       setSubmitting(true);
       try {
         const answersMap: Record<string, number> = {};

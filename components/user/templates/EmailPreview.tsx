@@ -24,7 +24,7 @@ export const EmailPreview: React.FC<EmailPreviewProps> = ({ template, isMobileVi
         </div>
       </div>
 
-      {/* Email Body */}
+      {}
       <div className="p-6">
         <div 
           className="text-sm text-gray-700 leading-relaxed whitespace-pre-line mb-6"

@@ -46,7 +46,7 @@ export function useUsers(): UseUsersReturn {
     setLoading(true);
     setError(null);
     
-    // Simulate API call
+    
     setTimeout(() => {
       setUsers(MOCK_USERS);
       setLoading(false);

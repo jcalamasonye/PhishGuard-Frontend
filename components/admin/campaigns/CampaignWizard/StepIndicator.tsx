@@ -19,7 +19,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep
         return (
           <React.Fragment key={step.number}>
             <div className="flex flex-col items-center">
-              {/* Circle */}
+              {}
               <div
                 className={cn(
                   'w-12 h-12 rounded-full flex items-center justify-center font-semibold transition-colors mb-2',
@@ -37,7 +37,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep
                 )}
               </div>
 
-              {/* Label */}
+              {}
               <div className="text-center">
                 <p
                   className={cn(
@@ -51,7 +51,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps, currentStep
               </div>
             </div>
 
-            {/* Connector Line */}
+            {}
             {!isLast && (
               <div
                 className={cn(

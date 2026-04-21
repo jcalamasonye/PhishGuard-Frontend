@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, X, Pencil } from 'lucide-react';
+import { Plus, Pencil, X } from 'lucide-react';
 import { TemplateCard } from './TemplateCard';
 import { EmailTemplate } from '@/types/template';
 import Button from '@/components/ui/Button';
@@ -11,7 +11,6 @@ import { templateService } from '@/services/templateService';
 interface EmailTemplateStepProps {
   selectedTemplateId?: string;
   onSelectTemplate: (templateId: string) => void;
-  
   onCreateCustom?: () => void;
 }
 
@@ -23,10 +22,7 @@ export const EmailTemplateStep: React.FC<EmailTemplateStepProps> = ({
   const router = useRouter();
   const [templates, setTemplates] = useState<EmailTemplate[]>([]);
   const [loading, setLoading] = useState(true);
-
-  
   const [activeTemplate, setActiveTemplate] = useState<EmailTemplate | null>(null);
-  const [activeTab, setActiveTab] = useState<'preview' | 'edit'>('preview');
 
   useEffect(() => {
     const fetchTemplates = async () => {
@@ -40,20 +36,10 @@ export const EmailTemplateStep: React.FC<EmailTemplateStepProps> = ({
         setLoading(false);
       }
     };
-
     fetchTemplates();
   }, []);
 
-  const openPreview = (template: EmailTemplate) => {
-    setActiveTemplate(template);
-    setActiveTab('preview');
-  };
-
-  const openEdit = (template: EmailTemplate) => {
-    setActiveTemplate(template);
-    setActiveTab('edit');
-  };
-
+  const openPreview = (template: EmailTemplate) => setActiveTemplate(template);
   const closeModal = () => setActiveTemplate(null);
 
   const handleCreateCustom = () => {
@@ -87,17 +73,13 @@ export const EmailTemplateStep: React.FC<EmailTemplateStepProps> = ({
             isSelected={selectedTemplateId === template.id}
             onSelect={() => onSelectTemplate(template.id)}
             onPreview={() => openPreview(template)}
-            onEdit={() => openEdit(template)}
+            onEdit={() => openPreview(template)}
           />
         ))}
       </div>
 
       <div className="flex justify-center">
-        <Button
-          onClick={handleCreateCustom}
-          variant="outline"
-          className="gap-2"
-        >
+        <Button onClick={handleCreateCustom} variant="outline" className="gap-2">
           <Plus className="w-5 h-5" />
           <div className="text-center">
             <p className="font-semibold">Create Custom Template</p>
@@ -106,34 +88,38 @@ export const EmailTemplateStep: React.FC<EmailTemplateStepProps> = ({
         </Button>
       </div>
 
-      {
-                <div className="p-10 flex flex-col items-center justify-center text-center gap-5">
-                  <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center">
-                    <Pencil className="w-7 h-7 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="text-gray-900 font-semibold text-base mb-1">Edit this template</p>
-                    <p className="text-gray-500 text-sm max-w-xs">
-                      Opens the full template editor where you can change the subject, body,
-                      sender details, and red flags.
-                    </p>
-                  </div>
-                  <Button
-                    onClick={() => {
-                      closeModal();
-                      router.push(`/admin/templates/${activeTemplate.id}/edit`);
-                    }}
-                    variant="primary"
-                    className="gap-2"
-                  >
-                    <Pencil className="w-4 h-4" />
-                    Open in Editor
-                  </Button>
-                </div>
-              )}
+      {activeTemplate && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              <h3 className="font-semibold text-gray-900">{activeTemplate.name}</h3>
+              <button onClick={closeModal} className="text-gray-400 hover:text-gray-600">
+                <X className="w-5 h-5" />
+              </button>
             </div>
-
-            {}
+            <div className="p-6 flex flex-col items-center text-center gap-4">
+              <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center">
+                <Pencil className="w-7 h-7 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-gray-900 font-semibold text-base mb-1">Edit this template</p>
+                <p className="text-gray-500 text-sm max-w-xs">
+                  Opens the full template editor where you can change the subject, body,
+                  sender details, and red flags.
+                </p>
+              </div>
+              <Button
+                onClick={() => {
+                  closeModal();
+                  router.push(`/admin/templates/${activeTemplate.id}/edit`);
+                }}
+                variant="primary"
+                className="gap-2"
+              >
+                <Pencil className="w-4 h-4" />
+                Open in Editor
+              </Button>
+            </div>
             <div className="flex items-center justify-between px-6 py-4 border-t border-gray-200">
               <button
                 onClick={closeModal}
@@ -148,9 +134,7 @@ export const EmailTemplateStep: React.FC<EmailTemplateStepProps> = ({
                 }}
                 variant="primary"
               >
-                {selectedTemplateId === activeTemplate.id
-                  ? '✓ Selected'
-                  : 'Use This Template'}
+                {selectedTemplateId === activeTemplate.id ? '✓ Selected' : 'Use This Template'}
               </Button>
             </div>
           </div>

@@ -123,7 +123,7 @@ export default function TrainingPage() {
         <div className="bg-white">
           <div className="max-w-4xl mx-auto px-6 py-12">
 
-            {}
+            {/* */}
             {(aiResult || aiLoading) && (
               <Card className="bg-purple-50 border-purple-200 mb-12">
                 <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">

@@ -141,7 +141,7 @@ export default function CampaignDetailsPage() {
   if (loading || !campaign) {
     return (
       <>
-        <Header userName={authUser?.name || 'Admin'} userRole="admin" notificationCount={0} />
+        <Header userName={authUser?.name || ''} userRole="admin" notificationCount={0} />
         <AdminSidebar />
         <main className="ml-64 mt-[73px] p-6 min-h-screen bg-gray-50">
           <div className="flex items-center justify-center py-20">
@@ -168,7 +168,7 @@ export default function CampaignDetailsPage() {
   return (
     <>
       <Header
-        userName={authUser?.name || 'Admin'}
+        userName={authUser?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

@@ -97,7 +97,7 @@ export default function CreateCustomTemplatePage() {
   return (
     <>
       <Header 
-        userName={user?.name || 'Admin'} 
+        userName={user?.name || ''} 
         userRole="admin"
         notificationCount={0}
       />

@@ -115,9 +115,11 @@ export default function EditTemplatePage() {
       });
       showToast('Template updated successfully', 'success');
       router.push('/admin/templates');
-    } catch (err) {
+    } catch (err: unknown) {
       console.error('Failed to update template:', err);
-      showToast('Failed to update template', 'error');
+      const error = err as { response?: { data?: { error?: { message?: string } } } };
+      const msg = error?.response?.data?.error?.message || 'Failed to update template. Please try again.';
+      showToast(msg, 'error');
     } finally {
       setSaving(false);
     }
@@ -126,7 +128,7 @@ export default function EditTemplatePage() {
   if (loading) {
     return (
       <>
-        <Header userName={user?.name || 'Admin'} userRole="admin" notificationCount={0} />
+        <Header userName={user?.name || ''} userRole="admin" notificationCount={0} />
         <AdminSidebar />
         <main className="ml-64 mt-[73px] p-6 min-h-screen bg-gray-50">
           <div className="flex items-center justify-center py-20">
@@ -139,7 +141,7 @@ export default function EditTemplatePage() {
 
   return (
     <>
-      <Header userName={user?.name || 'Admin'} userRole="admin" notificationCount={0} />
+      <Header userName={user?.name || ''} userRole="admin" notificationCount={0} />
       <AdminSidebar />
 
       <main className="ml-64 mt-[73px] p-6 min-h-screen bg-gray-50">

@@ -86,7 +86,7 @@ export default function ProfileSettingsPage() {
 
   const handleSavePreferences = () => {
     
-    console.log('Save preferences:', notifications);
+    if (typeof window !== 'undefined') { localStorage.setItem('phishguard_admin_prefs', JSON.stringify(notifications)); }
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 3000);
   };
@@ -94,7 +94,7 @@ export default function ProfileSettingsPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

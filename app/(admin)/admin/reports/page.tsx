@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Download, ChevronDown } from 'lucide-react';
 import { Header } from '@/components/shared/Header';
 import { AdminSidebar } from '@/components/admin/Sidebar';
@@ -18,6 +19,7 @@ import type { OverviewData, RiskAssessment } from '@/services/analyticsService';
 
 export default function ReportsAnalyticsPage() {
   const { user } = useAuth();
+  const router = useRouter();
   const [dateRange] = useState('Last 6 months');
   const [loading, setLoading] = useState(true);
 
@@ -115,25 +117,28 @@ export default function ReportsAnalyticsPage() {
   };
 
   const handleScheduleTraining = (level: string) => {
-    console.log('Schedule training for', level, 'risk users');
+    // Navigate to campaign creation pre-filtered to this risk level
+    router.push(`/admin/campaigns/create?risk=${level}`);
   };
 
   const handleSendResources = (level: string) => {
-    console.log('Send resources to', level, 'risk users');
+    // Navigate to training resources filtered by risk level
+    router.push(`/admin/users?risk=${level}`);
   };
 
   const handleViewAll = (level: string) => {
-    console.log('View all', level, 'risk users');
+    // Navigate to users page filtered by risk level
+    router.push(`/admin/users?risk=${level}`);
   };
 
   const handleCreateTraining = () => {
-    console.log('Create targeted training');
+    router.push('/admin/campaigns/create');
   };
 
   if (loading) {
     return (
       <>
-        <Header userName={user?.name || 'Admin'} userRole="admin" notificationCount={0} />
+        <Header userName={user?.name || ''} userRole="admin" notificationCount={0} />
         <AdminSidebar />
         <main className="ml-64 mt-[73px] p-6 min-h-screen bg-gray-50">
           <div className="flex items-center justify-center py-20">
@@ -151,7 +156,7 @@ export default function ReportsAnalyticsPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

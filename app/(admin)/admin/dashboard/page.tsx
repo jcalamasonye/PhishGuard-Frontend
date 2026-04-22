@@ -140,7 +140,7 @@ export default function AdminDashboardPage() {
   if (loading) {
     return (
       <>
-        <Header userName={user?.name || 'Admin'} userRole="admin" notificationCount={0} />
+        <Header userName={user?.name || ''} userRole="admin" notificationCount={0} />
         <AdminSidebar />
         <main className="ml-64 mt-[73px] p-8 min-h-screen bg-gray-50">
           <div className="flex items-center justify-center py-20">
@@ -154,7 +154,7 @@ export default function AdminDashboardPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

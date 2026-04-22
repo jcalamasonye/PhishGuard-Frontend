@@ -193,7 +193,7 @@ export default function UserDashboardPage() {
   if (loading) {
     return (
       <>
-        <Header userName={user?.name || 'User'} userRole="user" notificationCount={0} />
+        <Header userName={user?.name || ''} userRole="user" notificationCount={0} />
         <UserSidebar />
         <main className="ml-64 mt-[73px] p-6 min-h-screen bg-gray-50">
           <div className="flex items-center justify-center py-20">
@@ -207,7 +207,7 @@ export default function UserDashboardPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'User'}
+        userName={user?.name || ''}
         userRole="user"
         notificationCount={0}
       />

@@ -78,7 +78,7 @@ This is how your footer will appear in all training emails
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

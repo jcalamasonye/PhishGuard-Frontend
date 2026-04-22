@@ -41,33 +41,42 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [status, setStatus] = useState<AuthStatus>(AuthStatus.LOADING);
 
-  
   useEffect(() => {
     const restoreSession = async () => {
       const token = tokenStorage.getAccessToken();
       if (!token) {
+        // No token at all — clear and mark unauthenticated
         setStatus(AuthStatus.UNAUTHENTICATED);
         return;
       }
 
       try {
+        // Token exists — verify it is still valid by calling /auth/me
         const currentUser = await authService.getMe();
         setUser(currentUser);
         setStatus(AuthStatus.AUTHENTICATED);
       } catch {
+        // Token is expired or invalid — clear everything and redirect to login
         tokenStorage.clearTokens();
+        setUser(null);
         setStatus(AuthStatus.UNAUTHENTICATED);
+        // Redirect based on current path so admin goes to admin login
+        const path = window.location.pathname;
+        if (path.startsWith('/admin')) {
+          router.replace('/admin-login');
+        } else {
+          router.replace('/login');
+        }
       }
     };
 
     restoreSession();
-  }, []);
+  }, [router]);
 
   const login = useCallback(async (credentials: LoginCredentials) => {
     const result = await authService.login(credentials);
     setUser(result.user);
     setStatus(AuthStatus.AUTHENTICATED);
-
     if (result.user.role === 'admin') {
       router.push('/admin/dashboard');
     } else {
@@ -79,7 +88,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const result = await authService.register(data);
     setUser(result.user);
     setStatus(AuthStatus.AUTHENTICATED);
-
     if (result.user.role === 'admin') {
       router.push('/admin/dashboard');
     } else {
@@ -88,7 +96,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [router]);
 
   const logout = useCallback(async () => {
-    await authService.logout();
+    try {
+      await authService.logout();
+    } catch {
+      // Always clear tokens even if API call fails
+    }
+    tokenStorage.clearTokens();
     setUser(null);
     setStatus(AuthStatus.UNAUTHENTICATED);
     router.push('/login');

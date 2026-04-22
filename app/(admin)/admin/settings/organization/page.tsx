@@ -80,7 +80,7 @@ export default function OrganizationSettingsPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

@@ -161,7 +161,7 @@ export default function UserManagementPage() {
   return (
     <>
       <Header
-        userName={authUser?.name || 'Admin'}
+        userName={authUser?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

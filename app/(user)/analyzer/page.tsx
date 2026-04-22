@@ -73,7 +73,7 @@ export default function EmailAnalyzerPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'User'}
+        userName={user?.name || ''}
         userRole="user"
         notificationCount={0}
       />

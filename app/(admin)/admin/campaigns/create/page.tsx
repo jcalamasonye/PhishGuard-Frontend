@@ -175,7 +175,7 @@ export default function CreateCampaignPage() {
   return (
     <>
       <Header
-        userName={user?.name || 'Admin'}
+        userName={user?.name || ''}
         userRole="admin"
         notificationCount={0}
       />

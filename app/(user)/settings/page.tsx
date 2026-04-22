@@ -27,11 +27,13 @@ const UserSettingsPage = () => {
     confirmPassword: ''
   });
 
-  const [notifications, setNotifications] = useState({
-    campaignLaunched: true,
-    weeklySummary: false,
-    systemUpdates: true,
-    browserNotifications: false
+  type NotifPrefs = { campaignLaunched: boolean; weeklySummary: boolean; systemUpdates: boolean; browserNotifications: boolean };
+  const [notifications, setNotifications] = useState<NotifPrefs>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('phishguard_notification_prefs');
+      if (saved) { try { return JSON.parse(saved); } catch {} }
+    }
+    return { campaignLaunched: true, weeklySummary: false, systemUpdates: true, browserNotifications: false };
   });
 
   useEffect(() => {
@@ -95,7 +97,9 @@ const UserSettingsPage = () => {
   };
 
   const handleSavePreferences = () => {
-    console.log('Save preferences:', notifications);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('phishguard_notification_prefs', JSON.stringify(notifications));
+    }
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 3000);
   };
@@ -103,7 +107,7 @@ const UserSettingsPage = () => {
   return (
     <>
       <Header
-        userName={user?.name || 'User'}
+        userName={user?.name || ''}
         userRole="user"
         notificationCount={0}
       />

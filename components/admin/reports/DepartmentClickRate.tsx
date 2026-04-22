@@ -30,7 +30,7 @@ export const DepartmentClickRate: React.FC<DepartmentClickRateProps> = ({ data }
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
           <XAxis type="number" domain={[0, 1]} tick={{ fontSize: 12 }} />
           <YAxis dataKey="department" type="category" tick={{ fontSize: 12 }} width={70} />
-          <Tooltip formatter={(value?: number) => `${(((value ?? 0) * 100).toFixed(1))}%`} />
+          <Tooltip formatter={(value) => [`${(Number(value) * 100).toFixed(1)}%`, 'Click Rate']} />
           <Bar dataKey="clickRate" fill="#3b82f6" radius={[0, 4, 4, 0]} />
         </BarChart>
       </ResponsiveContainer>

@@ -56,16 +56,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(currentUser);
         setStatus(AuthStatus.AUTHENTICATED);
       } catch {
-        // Token is expired or invalid — clear everything and redirect to login
+        // Token is expired or invalid — clear everything
         tokenStorage.clearTokens();
         setUser(null);
         setStatus(AuthStatus.UNAUTHENTICATED);
-        // Redirect based on current path so admin goes to admin login
+
+        // Only redirect to login if NOT on a public page
+        // Public pages like /training/* should be accessible without auth
         const path = window.location.pathname;
-        if (path.startsWith('/admin')) {
-          router.replace('/admin-login');
-        } else {
-          router.replace('/login');
+        const isPublicRoute = path.startsWith('/training/') || path === '/training';
+
+        if (!isPublicRoute) {
+          if (path.startsWith('/admin')) {
+            router.replace('/admin-login');
+          } else {
+            router.replace('/login');
+          }
         }
       }
     };

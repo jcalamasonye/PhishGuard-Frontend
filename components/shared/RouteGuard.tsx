@@ -31,7 +31,9 @@ export default function RouteGuard({
     }
 
     // Not logged in and trying to access protected page — redirect to correct login
-    if (requireAuth && !isAuthenticated) {
+    // Skip redirect for public routes like /training/*
+    const isPublicRoute = pathname?.startsWith('/training');
+    if (requireAuth && !isAuthenticated && !isPublicRoute) {
       if (pathname?.startsWith('/admin')) {
         router.replace('/admin-login');
       } else {

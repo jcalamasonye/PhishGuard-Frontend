@@ -149,7 +149,11 @@ apiClient.interceptors.response.use(
       tokenStorage.clearTokens();
       refreshSubscribers = [];
       if (typeof window !== 'undefined') {
-        window.location.href = '/login';
+        // Don't redirect to login from public pages like /training/*
+        const isPublicRoute = window.location.pathname.startsWith('/training');
+        if (!isPublicRoute) {
+          window.location.href = '/login';
+        }
       }
       return Promise.reject(refreshError);
     } finally {
